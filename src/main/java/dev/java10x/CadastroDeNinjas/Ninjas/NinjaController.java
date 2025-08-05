@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping
+@RequestMapping("/ninjas")
 public class NinjaController {
 
 	private NinjaService ninjaService;
@@ -31,9 +31,9 @@ public class NinjaController {
 	}
 
 	//Mostrar Ninjas por ID (READ)
-	@GetMapping("/listarPorId")
-	public List<NinjaModel> listarNinjasPorId() {
-		return ninjaService.listarNinjasPorId();
+	@GetMapping("/listar/{id}")
+	public NinjaModel listarNinjasPorId(@PathVariable Long id) {
+		return ninjaService.listarNinjasPorId(id);
 	}
 
 	//Alterar Ninja (UPDATE)
