@@ -16,14 +16,16 @@ public class NinjaController {
 
 	@GetMapping("/boasvindas")
 	public String boasVindas() {
+
 		return "Primeira rota Hello World do Java 10x!";
 	}
 
 	//Adicionar Ninja(CREAT)
 	@PostMapping("/criar")
-	public String adicionarNinja() {
-		return "Criando Ninja";
+	public NinjaModel criarNinja(@RequestBody NinjaModel ninja) {
+		return ninjaService.criarNinja(ninja);
 	}
+
 	//Mostrar todos Ninjas(READ)
 	@GetMapping("/listar")
 	public List<NinjaModel> listarNinjas() {

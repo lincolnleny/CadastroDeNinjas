@@ -14,6 +14,13 @@ public class NinjaService {
 	}
 
 	// Implementar métodos de serviço para manipular ninjas
+
+	//Criar Ninja (CREATE)
+	public NinjaModel criarNinja(NinjaModel ninja) {
+		return ninjaRepository.save(ninja);
+	}
+
+
 	//Mostrar todos os ninjas (READ)
 	public List<NinjaModel> listarNinjas() {
 		return ninjaRepository.findAll();
